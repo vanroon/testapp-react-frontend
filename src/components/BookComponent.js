@@ -1,6 +1,7 @@
 import React from 'react'
 import bookService from '../services/BookService'
 import {Navbar} from 'react-bootstrap'
+import MUIDataTable from "mui-datatables";
 
 
 class BookComponent extends React.Component{
@@ -19,12 +20,61 @@ class BookComponent extends React.Component{
 
 
     render(){
+        const data = this.state.books.map.book
+        const columns = [
+          {
+            name: "id",
+            label: 'id',
+            options : {
+              filter: false,
+              sort: true,
+            }
+          },
+          {
+            name: "book name",
+            label: "book name",
+            options: {
+              filter: false,
+              sort: true,
+            }
+          },
+          {
+            name: "book author",
+            label: "book author",
+            options: {
+              filter: false,
+              sort: true,
+            }
+   }    ,
+   {
+         name: "price",
+         label: "price",
+         options: {
+           filter: false,
+           sort: true,
+         }
+   }
+    ];
+    const options = {
+        onRowClick: book => {
+            if(book){
+                const jo = "var"
+            }
+        }
+    }
+    const name = "oioi"
         return(
         <div>
-            <Navbar bg="info" variant="dark" >
+            {/* <Navbar bg="info" variant="dark" >
                 <Navbar.Brand href="#">Book App</Navbar.Brand>
-            </Navbar>
-            <h1 className="text-center mt-5 ">List of Books</h1>
+            </Navbar> */}
+            {/* <MUIDataTable
+                title = {"jo"}
+                data = {data}
+                columns = {columns}
+                options = {options}
+                /> */}
+            <h1 className="text-center mt-5 ">List {name} of Books</h1>
             <div className="container mt-2">
             <table className="table table-bordered border-info">
                 <thead>
